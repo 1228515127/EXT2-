@@ -100,6 +100,7 @@ void readInodeTable(inode* inode_table){
         for(int j=0;j<1024;j++){
             p[j]=buf[j];
         }
+        p+=sizeof(inode);
     }
 }
 
@@ -115,6 +116,7 @@ void writeInodeTable(inode* inode_table){
             buf[j]=p[j];
         }
         writeBlock(i,buf);
+        p+=sizeof(inode);
     }
 }
 
